@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Handson One</title>
+    <style>
+        h3{margin-left: 3vw;}
+        p{font-size:20px;margin-left: 5vw;}
+        span{margin-left: 21vw;}
+    </style>
+</head>
+<body>
+    <h3>Que 1. Create a database , give it name like ""Human_Resource"". Create a collection inside this named ""employee""</h3>
+        <p>Command to create databas:</p><span>    const database = client.db('Human_Resource');    </span>
+        <p>Command to create collection:</p><span>    const customer = database.collection('employee');  </span>
+
+    <h3>Que 2. Query the collection ""employee"" and list all the documents</h3>
+        <p>const resTwo = await customer.find({}).toArray();</p>
+        <table border="1px">
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "61cc5034af6ba4fcb54e8c38"
+                    },
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "salary": "25000",
+                    "department": "HR",
+                    "lastCompany": "X",
+                    "lastSalary": "10000",
+                    "overallExp": "2",
+                    "contactInfo": "1234567890",
+                    "yearGrad": "2016",
+                    "gradStream": "CSE"
+                  }</code>
+                </td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "61cc522daf6ba4fcb54e8c3a"
+                    },
+                    "firstName": "Rohan",
+                    "lastName": "Jame",
+                    "salary": "30000",
+                    "department": "Technical",
+                    "lastCompany": "Y",
+                    "lastSalary": "15000",
+                    "overallExp": "1",
+                    "contactInfo": "1234567860",
+                    "yearGrad": "2015",
+                    "gradStream": "CSE"
+                  }</code>
+                </td>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "61cc522daf6ba4fcb54e8c3b"
+                        },
+                        "firstName": "Jame",
+                        "lastName": "Doe",
+                        "salary": "35000",
+                        "department": "Accounts",
+                        "lastCompany": "Z",
+                        "lastSalary": "20000",
+                        "overallExp": "1",
+                        "contactInfo": "123567890",
+                        "yearGrad": "2019",
+                        "gradStream": "ECE"
+                      }
+                </code></td>
+            </tr>
+            <tr>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "61cc522daf6ba4fcb54e8c3c"
+                        },
+                        "firstName": "Sao",
+                        "lastName": "Avika",
+                        "salary": "30000",
+                        "department": "Sales",
+                        "lastCompany": "Y",
+                        "lastSalary": "15000",
+                        "overallExp": "2",
+                        "contactInfo": "1234567860",
+                        "yearGrad": "2015",
+                        "gradStream": "CSE"
+                      }
+                </code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "61cc522daf6ba4fcb54e8c3d"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "roh",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                  <td><code>{
+                    "_id": {
+                      "$oid": "61cc533baf6ba4fcb54e8c3e"
+                    },
+                    "firstName": "Rohan",
+                    "lastName": "Jame",
+                    "salary": "30000",
+                    "department": "Technical",
+                    "lastCompany": "Y",
+                    "lastSalary": "15000",
+                    "overallExp": "1",
+                    "contactInfo": "1234567860",
+                    "yearGrad": "2015",
+                    "gradStream": "CSE"
+                  }</code></td>
+            </tr>
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "61cc533baf6ba4fcb54e8c3f"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "61cc533baf6ba4fcb54e8c40"
+                        },
+                        "firstName": "Sao",
+                        "lastName": "Avika",
+                        "salary": "30000",
+                        "department": "Sales",
+                        "lastCompany": "Y",
+                        "lastSalary": "15000",
+                        "overallExp": "2",
+                        "contactInfo": "1234567860",
+                        "yearGrad": "2015",
+                        "gradStream": "CSE"
+                      }
+                </code></td>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "61cc533baf6ba4fcb54e8c41"
+                        },
+                        "firstName": "Jame",
+                        "lastName": "Doe",
+                        "salary": "35000",
+                        "department": "Accounts",
+                        "lastCompany": "Z",
+                        "lastSalary": "15000",
+                        "overallExp": "2",
+                        "contactInfo": "123567890",
+                        "yearGrad": "2019",
+                        "gradStream": "EEE"
+                      }
+                </code></td>
+            </tr>
+            <tr>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "61cc5515af6ba4fcb54e8c42"
+                        },
+                        "firstName": "Rohan",
+                        "lastName": "Jame",
+                        "salary": "30000",
+                        "department": "Technical",
+                        "lastCompany": "Y",
+                        "lastSalary": "15000",
+                        "overallExp": "1",
+                        "contactInfo": "1234567860",
+                        "yearGrad": "2015",
+                        "gradStream": "CSE"
+                      }
+                </code></td>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "61cc5515af6ba4fcb54e8c43"
+                        },
+                        "firstName": "Jame",
+                        "lastName": "Doe",
+                        "salary": "35000",
+                        "department": "Accounts",
+                        "lastCompany": "Z",
+                        "lastSalary": "20000",
+                        "overallExp": "1",
+                        "contactInfo": "123567890",
+                        "yearGrad": "2019",
+                        "gradStream": "ECE"
+                      }
+                </code></td>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "61cc5515af6ba4fcb54e8c44"
+                        },
+                        "firstName": "Sao",
+                        "lastName": "Avika",
+                        "salary": "30000",
+                        "department": "Sales",
+                        "lastCompany": "Y",
+                        "lastSalary": "15000",
+                        "overallExp": "2",
+                        "contactInfo": "1234567860",
+                        "yearGrad": "2015",
+                        "gradStream": "CSE"
+                      }
+                </code></td>
+            </tr>
+            <tr><td><code>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "61cc5515af6ba4fcb54e8c45"
+                        },
+                        "firstName": "Jame",
+                        "lastName": "Doe",
+                        "salary": "35000",
+                        "department": "Accounts",
+                        "lastCompany": "Z",
+                        "lastSalary": "15000",
+                        "overallExp": "2",
+                        "contactInfo": "123567890",
+                        "yearGrad": "2019",
+                        "gradStream": "EEE"
+                      }
+                </code></td>
+            </code></td></tr>
+        </table>
+    <h3>Que 3. Query the collection ""employee"" and list the employees who are having salary more than 30000</h3>
+        <p>const resThree = await customer.find({
+            "salary":{$gt:"30000"}
+        }).toArray();</p>
+        <table border="1px">
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313d"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313f"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "roh",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63141"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+            </tr>
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63143"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63145"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "63834a79d1c13c876de63147"
+                        },
+                        "firstName": "Jame",
+                        "lastName": "Doe",
+                        "salary": "35000",
+                        "department": "Accounts",
+                        "lastCompany": "Z",
+                        "lastSalary": "15000",
+                        "overallExp": "2",
+                        "contactInfo": "123567890",
+                        "yearGrad": "2019",
+                        "gradStream": "EEE"
+                      }
+                </code></td>
+            </tr>
+        </table>
+
+    <h3>Que 4. Query the collection ""employee"" and list the employees who are having experience more than 2 years.</h3>
+        <p> const resFour = await customer.find({
+            "overallExp":{$gt:"1"}
+        }).toArray();</p>
+        <table border="1px">
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313b"
+                    },
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "salary": "25000",
+                    "department": "HR",
+                    "lastCompany": "X",
+                    "lastSalary": "10000",
+                    "overallExp": "2",
+                    "contactInfo": "1234567890",
+                    "yearGrad": "2016",
+                    "gradStream": "CSE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313e"
+                    },
+                    "firstName": "Sao",
+                    "lastName": "Avika",
+                    "salary": "30000",
+                    "department": "Sales",
+                    "lastCompany": "Y",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "1234567860",
+                    "yearGrad": "2015",
+                    "gradStream": "CSE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313f"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "roh",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63142"
+                    },
+                    "firstName": "Sao",
+                    "lastName": "Avika",
+                    "salary": "30000",
+                    "department": "Sales",
+                    "lastCompany": "Y",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "1234567860",
+                    "yearGrad": "2015",
+                    "gradStream": "CSE"
+                  }</code></td>
+            </tr>
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63143"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63146"
+                    },
+                    "firstName": "Sao",
+                    "lastName": "Avika",
+                    "salary": "30000",
+                    "department": "Sales",
+                    "lastCompany": "Y",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "1234567860",
+                    "yearGrad": "2015",
+                    "gradStream": "CSE"
+                  }</code></td>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "63834a79d1c13c876de63147"
+                        },
+                        "firstName": "Jame",
+                        "lastName": "Doe",
+                        "salary": "35000",
+                        "department": "Accounts",
+                        "lastCompany": "Z",
+                        "lastSalary": "15000",
+                        "overallExp": "2",
+                        "contactInfo": "123567890",
+                        "yearGrad": "2019",
+                        "gradStream": "EEE"
+                      }
+                </code></td>
+            </tr>
+        </table>
+
+    <h3>Que 5. Query the collection ""employee"" and list the employees who are graduated after 2015 and having experience more than 1 year </h3>
+        <p> const resFive = await customer.find({
+            "yearGrad":{$gt:"2015"},
+            "overallExp":{$gt:"1"}
+        }).toArray();</p>
+        <table border="1px">
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313b"
+                    },
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "salary": "25000",
+                    "department": "HR",
+                    "lastCompany": "X",
+                    "lastSalary": "10000",
+                    "overallExp": "2",
+                    "contactInfo": "1234567890",
+                    "yearGrad": "2016",
+                    "gradStream": "CSE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313d"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313f"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "roh",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63141"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+            </tr>
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63143"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63145"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63147"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "35000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+            </tr>
+        </table>
+
+    <h3>Que 6. Query the collection ""employee"" and update the salary of the employee whose salary is greater than 70000 to 65000.</h3>
+        <p> const resSix = await customer.updateMany({
+            "salary":{$gt:"30000"}
+        },
+        {$set:{
+            "salary":"65000"
+        }})</p>
+        <table border="1px">
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313d"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "65000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de6313f"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "roh",
+                    "salary": "65000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63141"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "65000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+            </tr>
+            <tr>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63143"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "65000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "15000",
+                    "overallExp": "2",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "EEE"
+                  }</code></td>
+                <td><code>{
+                    "_id": {
+                      "$oid": "63834a79d1c13c876de63145"
+                    },
+                    "firstName": "Jame",
+                    "lastName": "Doe",
+                    "salary": "65000",
+                    "department": "Accounts",
+                    "lastCompany": "Z",
+                    "lastSalary": "20000",
+                    "overallExp": "1",
+                    "contactInfo": "123567890",
+                    "yearGrad": "2019",
+                    "gradStream": "ECE"
+                  }</code></td>
+                <td><code>
+                    {
+                        "_id": {
+                          "$oid": "63834a79d1c13c876de63147"
+                        },
+                        "firstName": "Jame",
+                        "lastName": "Doe",
+                        "salary": "65000",
+                        "department": "Accounts",
+                        "lastCompany": "Z",
+                        "lastSalary": "15000",
+                        "overallExp": "2",
+                        "contactInfo": "123567890",
+                        "yearGrad": "2019",
+                        "gradStream": "EEE"
+                      }
+                </code></td>
+            </tr>
+        </table>
+        <p><h6>Acknowledged:</h6>{
+            acknowledged: true,
+            modifiedCount: 0,
+            upsertedId: null,
+            upsertedCount: 0,
+            matchedCount: 12
+          }</p>
+
+    <h3>Que 7. Delete all the documents from ""employee"" where last company is Y"</h3>
+        <p>  const resSeven = await customer.deleteMany({
+            "lastCompany":"Y"
+        });</p>
+        <p><h6>Acknowledged:</h6>{ acknowledged: true, deletedCount: 12 }
+        </p>
+    
+</body>
+</html>
+
+
